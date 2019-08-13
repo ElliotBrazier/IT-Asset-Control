@@ -53,7 +53,7 @@ import { Production2Component } from './map/production2/production2.component';
 import { ShippingComponent } from './map/shipping/shipping.component';
 import { Globals } from './global';
 import { PinComponent } from './pin/pin.component';
-import { DecomissionComponent } from './decomission/decomission.component';
+import { DecommissionComponent } from './decommission/decommission.component';
 import { KeypadComponent } from './pin/keypad/keypad.component';
 import { CookieService } from 'ngx-cookie-service';
 //import {ChangeDetectorRef} from '@angular/core'
@@ -78,7 +78,7 @@ import { ChangepinComponent } from './pin/changepin/changepin.component';
     Production2Component,
     ShippingComponent,
     PinComponent,
-    DecomissionComponent,
+    DecommissionComponent,
     KeypadComponent,
     ManageComponent,
     ExportComponent,

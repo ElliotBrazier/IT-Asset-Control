@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DecomissionComponent } from './decomission.component';
+import { DecommissionComponent } from './decommission.component';
 
-describe('DecomissionComponent', () => {
-  let component: DecomissionComponent;
-  let fixture: ComponentFixture<DecomissionComponent>;
+describe('DecommissionComponent', () => {
+  let component: DecommissionComponent;
+  let fixture: ComponentFixture<DecommissionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DecomissionComponent ]
+      declarations: [ DecommissionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DecomissionComponent);
+    fixture = TestBed.createComponent(DecommissionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

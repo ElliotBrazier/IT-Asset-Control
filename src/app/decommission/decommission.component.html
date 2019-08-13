@@ -8,8 +8,8 @@
           <button mat-fab (click) = "saveChanges()"color = "warn" >Save<br></button>
         </div>
         <br>
-    <button  (click) ="exportAsJSON('Decomission')">Export to JSON</button>
-    <button  (click) ="exportAsCSV('Decomission') ">Export to CSV</button>
+    <button  (click) ="exportAsJSON('Decommission')">Export to JSON</button>
+    <button  (click) ="exportAsCSV('Decommission') ">Export to CSV</button>
   <table mat-table #table [dataSource]="decomSource" matSort> 
 
 
@@ -75,8 +75,8 @@
   <ng-container matColumnDef="Actions">
     <th mat-header-cell *matHeaderCellDef class="actions" mat-sort-header >Actions</th>
     <td mat-cell *matCellDef="let item"> 
-      <button [disabled] = "editMode" mat-button (click) = "recomission(item)">Recomission</button>
-      <button [disabled] = "editMode" mat-button (click) = "deleteRow(item)">Delete</button>
+      <button class="actionButtons" [disabled] = "editMode" mat-button (click) = "recomission(item)">Recomission</button>
+      <button class="actionButtons" [disabled] = "editMode" mat-button (click) = "deleteRow(item)">Delete</button>
     </td>
   </ng-container> 
 

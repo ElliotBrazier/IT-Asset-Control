@@ -109,13 +109,13 @@ export class InventoryComponent implements OnInit {
    * Deletes the decom table
    */
   decDelete() {
-    let colRef = this.db.collection('Decomission'); // decom reference
+    let colRef = this.db.collection('Decommission'); // decom reference
     let qry = colRef.ref.get().then(snapshot => {
       snapshot.forEach(doc => { //for each document in the collectoin
-        this.db.collection('Decomission').doc(doc.ref.id).delete();
+        this.db.collection('Decommission').doc(doc.ref.id).delete();
       })
     })
-    alert("Cleared Decomissioned items")
+    alert("Cleared Decommissioned items")
   }
   /**
    * Brings up keypad for validating, prompts for a table to delete 
@@ -141,7 +141,7 @@ export class InventoryComponent implements OnInit {
           case 'Queue':
             this.queDelete()
             break;
-          case 'Decomission':
+          case 'Decommission':
             this.decDelete()
             break;
         }
@@ -173,20 +173,20 @@ export class InventoryComponent implements OnInit {
 
   }
   /**
-   * Decomissions X of an item in the inventory
+   * Decommissions X of an item in the inventory
    * @param serial serial number
    * @param quantityLeft the quantity of the item
    */
-  decomission(serial, quantityLeft) {
+  decommission(serial, quantityLeft) {
     var qty;
-    qty = prompt("How many are you decomissioning", "1"); //prompt asking how many of the item to send to yeesus
+    qty = prompt("How many are you decommissioning", "1"); //prompt asking how many of the item to send to yeesus
     if (qty != null && qty != 0 && qty > 0 && qty <= quantityLeft) { // if they entered a number over 0 and its less than or equal to the number remaining
-      var notes = prompt("Notes about the decomission")
+      var notes = prompt("Notes about the decommission")
       if (notes == null) {
         notes = ""
       }
       let colRef = this.db.collection('Inventory'); // inv ref
-      let decRef = this.db.collection('Decomission'); // decom ref
+      let decRef = this.db.collection('Decommission'); // decom ref
       let qry = colRef.ref.get().then(snapshot => {
         snapshot.forEach(doc => { //for each document in the collectoin
           if (doc.data().Serial == serial) { // find the matching entry

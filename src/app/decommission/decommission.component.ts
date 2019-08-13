@@ -8,14 +8,14 @@ import * as firebase from 'firebase';
 import { MapComponent } from '../map/map.component';
 
 @Component({
-  selector: 'app-decomission',
-  templateUrl: './decomission.component.html',
-  styleUrls: ['./decomission.component.css']
+  selector: 'app-decommission',
+  templateUrl: './decommission.component.html',
+  styleUrls: ['./decommission.component.css']
 })
 /**
  * doesnt do anything special other than recommission items
  */
-export class DecomissionComponent implements OnInit {
+export class DecommissionComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   editMode = false;
   items;
@@ -69,7 +69,7 @@ export class DecomissionComponent implements OnInit {
   recomission(item) {
     var deleted = false;
     var docFound = false;;
-    let colRef = this.db.collection('Decomission');
+    let colRef = this.db.collection('Decommission');
     let invRef = this.db.collection('Inventory');
     let qry = colRef.ref.get().then(snapshot => { // for each doc in decom
       snapshot.forEach(doc => {
@@ -93,7 +93,7 @@ export class DecomissionComponent implements OnInit {
             if (!docFound) {
               var del = confirm("Item not found in Inventory. Do you want to delete it?")
               if (del) {
-                let colRef = this.db.collection('Decomission');
+                let colRef = this.db.collection('Decommission');
                 let qry = colRef.ref.get().then(snapshot => {
                   snapshot.forEach(doc => {
                     if (doc.data().Name == item.Name && doc.data().Serial == item.Serial && doc.data().Location == item.Location && doc.data().Notes == item.Notes) {
@@ -113,7 +113,7 @@ export class DecomissionComponent implements OnInit {
    * @param item the item to delete
    */
   deleteRow(item) {
-    let colRef = this.db.collection('Decomission');
+    let colRef = this.db.collection('Decommission');
     var flag = false;
     let qry = colRef.ref.get().then(snapshot => {
       snapshot.forEach(doc => {
@@ -186,7 +186,7 @@ export class DecomissionComponent implements OnInit {
         temp.push($(allboxesArr[x + 4]).val())
         container.push(temp) //add array to array for l8r
       }
-      let colRef = this.db.collection('Decomission'); //from the decom table
+      let colRef = this.db.collection('Decommission'); //from the decom table
       let qry = colRef.ref.get().then(snapshot => {
         snapshot.forEach(doc => { //for each doc. A row is a doc in this scenario, this was a huge realization https://i.ytimg.com/vi/LLpIMRowndg/maxresdefault.jpg
           for (let x = 0; x < container.length; x++) {

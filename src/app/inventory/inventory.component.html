@@ -102,7 +102,7 @@
           
           <button mat-button class="actionButtons" [disabled] = "editMode" (click) = "restock($event, item.Serial)" id="{{item.OrderUrl + ' ' + item.Name}}">Reorder</button>
           <button mat-button class="actionButtons" [disabled] = "editMode" (click) = "queueItem(item.Name, 1, item.Serial)" id="{{item.OrderUrl + ' ' + item.Name}}">Queue</button> 
-          <button mat-button class="actionButtons" [disabled] = "item.Quantity <= 0 || editMode" (click) = "decomission(item.Serial, item.Quantity)" id="decom">Decom</button>
+          <button mat-button class="actionButtons" [disabled] = "item.Quantity <= 0 || editMode" (click) = "decommission(item.Serial, item.Quantity)" id="decom">Decom</button>
           
           <div *ngIf="editMode">
             <button mat-button (click) = "deleteRow(item)">Delete Row</button>

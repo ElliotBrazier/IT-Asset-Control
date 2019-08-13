@@ -47,10 +47,10 @@ export class FirestoreService {
     this.items = db.collection('Inventory').valueChanges();
     this.itemCollection = this.db.collection('Inventory');
     this.manageCollection = this.db.collection('Manage');
-    this.decomCollection = this.db.collection('Decomission');
+    this.decomCollection = this.db.collection('Decommission');
     this.queueItems = this.db.collection('Queue').valueChanges();
     this.manageItems = this.db.collection('Manage').valueChanges();
-    this.decomItems = this.db.collection('Decomission').valueChanges();
+    this.decomItems = this.db.collection('Decommission').valueChanges();
     this.remainingItems = 0;
 
     this.updateRemaining();
@@ -220,7 +220,7 @@ export class FirestoreService {
     })
   }
   /**
-   * Makes an entry into the decomission table
+   * Makes an entry into the decommission table
    * @param name Item name
    * @param location items location
    * @param user current user
@@ -228,7 +228,7 @@ export class FirestoreService {
    * @param date date it was broken/decom'd
    */
   decomEntry(name: string, location: string, user: string, notes: string, date: Date) {
-    return this.db.collection('Decomission').add({
+    return this.db.collection('Decommission').add({
       Name: name,
       Location: location,
       User: user,

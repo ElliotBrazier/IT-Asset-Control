@@ -84,39 +84,36 @@
           <ng-template mat-tab-label>
               <span *ngIf="selectedIndex == 4" class="spans">
             <mat-icon style="vertical-align: -4px" class="example-tab-icon">phonelink_off</mat-icon>
-              Decomissioned
+              Decommissioned
               </span>
 
               <span *ngIf="selectedIndex != 4" style="font-size: 23px  ">
             <mat-icon style="vertical-align: -4px" class="example-tab-icon">phonelink_off</mat-icon>
-              Decomissioned
+              Decommissioned
               </span>
             </ng-template>
-       <app-decomission></app-decomission>
+       <app-decommission></app-decommission>
         </mat-tab>
     
       </mat-tab-group>
 
 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
 <script>
-  const firebaseConfig = {
-  apiKey: "AIzaSyDa4HvodLBhScipdlM29xtM6nYIHtzpTJA",
-  authDomain: "it-asset-control.firebaseapp.com",
-  databaseURL: "https://it-asset-control.firebaseio.com",
-  projectId: "it-asset-control",
-  storageBucket: "it-asset-control.appspot.com",
-  messagingSenderId: "92479072203",
-  appId: "1:92479072203:web:549ad23649fe486f"
-};
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyDa4HvodLBhScipdlM29xtM6nYIHtzpTJA",
-    authDomain: "it-asset-control.firebaseapp.com",
-    databaseURL: "https://it-asset-control.firebaseio.com",
-    projectId: "it-asset-control",
-    storageBucket: "it-asset-control.appspot.com",
-    messagingSenderId: "92479072203",
-    appId: "1:92479072203:web:549ad23649fe486f"
+    apiKey: "AIzaSyBDHbWu8FZ6w-XhtlI8OKgu2K2hpYV7fEs",
+    authDomain: "it-asset-control-5565d.firebaseapp.com",
+    databaseURL: "https://it-asset-control-5565d.firebaseio.com",
+    projectId: "it-asset-control-5565d",
+    storageBucket: "it-asset-control-5565d.appspot.com",
+    messagingSenderId: "122669221368",
+    appId: "1:122669221368:web:0a9ff0b94314ad4f"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);

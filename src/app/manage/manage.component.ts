@@ -110,14 +110,14 @@ export class ManageComponent implements OnInit {
    * @param id item id
    * @param quantity quantity left
    */
-  decomission(id, quantity) {
+  decommission(id, quantity) {
     var qty;
-    qty = prompt("How many are you decomissioning", "1"); //prompt asking how many of the item to send to yeesus
+    qty = prompt("How many are you decommissioning", "1"); //prompt asking how many of the item to send to yeesus
     if (qty <= quantity) {
       if (qty != null && qty != 0 && qty > 0) { // if they entered a number over 0 and its less than or equal to the number remaining
 
         let colRef = this.db.collection('Manage'); // inv ref
-        let decRef = this.db.collection('Decomission'); // decom ref
+        let decRef = this.db.collection('Decommission'); // decom ref
         let qry = colRef.ref.get().then(snapshot => {
           snapshot.forEach(doc => { //for each document in the collectoin
             if (doc.data().ID == id) { // find the matching entry
@@ -131,7 +131,7 @@ export class ManageComponent implements OnInit {
                 Date: this.myDate
               })
               if(quantity - qty <= 0) {
-                colRef.doc(doc.id).delete() //delete the doc if decomissioning all or more
+                colRef.doc(doc.id).delete() //delete the doc if decommissioning all or more
               }
               else if(quantity - qty > 0){ //update if they remove less than the total number available
                 doc.ref.update({
