@@ -14,14 +14,14 @@
     <button (click) = "exportToJSON('Inventory')">Export as JSON</button>
     <button (click) = "exportToCSV('Inventory')">Export as CSV</button>
     
-<div class="invTable">
+<div class="invTable mat-elevation-z8">
 
   <!-- grab data from the variable "items" inside of inventory component -->
-  <table mat-table #table [dataSource]="itemsource" matSort> 
+  <table mat-table  [dataSource]="itemsource" matSort> 
     <!-- column named "name" -->
     <ng-container matColumnDef="Name">
       <!-- a table header thats a mat header, and is sortable -->
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="name">Name</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="name" >Name</th>
       <!-- item is an object inside of items -->
       <td mat-cell *matCellDef="let item">
         <div *ngIf="!editMode">
@@ -113,12 +113,13 @@
     </ng-container> 
     
     <!-- next 2 lines are determining what rows and columns to display, displayColumns is an array in the component -->
-    <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayColumns; sticky: true"></tr>
     <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
     
   </table>
 </div>
 <button (click) = "massDelete($event)">Mass Delete</button> &nbsp;
           <app-pin></app-pin>
+          <!-- <app-scan></app-scan> -->
   
 </body>

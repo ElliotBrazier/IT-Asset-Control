@@ -17,6 +17,7 @@ td{
 
  
   }
+
   
 .description{
     
@@ -24,6 +25,7 @@ td{
     text-align: center;
     font-size: 20px;
     font-weight: bold;
+    
 }
 .name{
     width: 10%; 
@@ -133,3 +135,7 @@ td{
         .buttons{
             align-content: center;
         }
+        .invTable{
+            overflow: auto;
+           
+          }

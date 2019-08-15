@@ -40,6 +40,7 @@ export class InventoryComponent implements OnInit {
 
   ngOnInit() {
     this.firebaseService.getInventory().subscribe(data => { this.items = data; this.itemsource = new MatTableDataSource(data); this.itemsource.sort = this.sort; });
+    
   }
 /**
  * Gives a shade of a gradient based on the ratio of quantity left to last restocked at
@@ -122,30 +123,40 @@ export class InventoryComponent implements OnInit {
    */
   massDelete($event) {
     if($event.ctrlKey){
+      var pins = []
+      var users = []
     var enteredPin = ""
     const dialogConfig = new MatDialogConfig(); //options for dialog boxes
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true; //so they can't exit
     const dialogRef = this.dialog.open(KeypadComponent, dialogConfig); //open the keypad 
     dialogRef.afterClosed().subscribe(data => {
-      enteredPin = data;
-      if (this.pin.pins.includes(enteredPin)) {
+      let colRef = this.db.collection('Pins'); //from the pins
+    let qry = colRef.ref.get().then(snapshot => {
+      snapshot.forEach(doc => {
+        users.push(doc.data().Name); //fill up the arrays with names
+        pins.push(doc.data().Pin); //fill up array with pin
+      })
+    }).then(()=>{
+
+      if (pins.includes(data)) {
         var table = prompt("Delete ALL documents from which table?")
         switch (table) {
           case 'Inventory':
             this.invDelete()
             break;
-          case 'Manage':
-            this.mngDelete()
-            break;
-          case 'Queue':
-            this.queDelete()
-            break;
-          case 'Decommission':
-            this.decDelete()
-            break;
-        }
-      }
+            case 'Manage':
+              this.mngDelete()
+              break;
+              case 'Queue':
+                this.queDelete()
+                break;
+                case 'Decommission':
+                  this.decDelete()
+                  break;
+                }
+              }
+            })
     })
   }
 }

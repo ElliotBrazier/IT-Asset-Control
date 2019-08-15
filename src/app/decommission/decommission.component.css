@@ -19,7 +19,7 @@
       
   }
 .actions{
-    width: 10%; 
+    width: 12%; 
     text-align: center;
     font-size: 20px;
     font-weight: bold;
@@ -37,7 +37,7 @@
     font-weight: bold;
 }
 .notes{
-    width: 40%;
+    width: 38%;
     text-align: center;
     font-size: 20px;
     font-weight: bold;
@@ -61,7 +61,7 @@
     font-weight: bold;
 }
 .actionButtons{
-    width: 40%;
+    /* width: 40%; */
     /* border: 1px solid navy; */
     box-shadow: 0px 0px 3px 1px navy;
     text-align: center;

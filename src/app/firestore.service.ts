@@ -102,6 +102,7 @@ export class FirestoreService {
    * @param orderUrl URL you want reorder button to go to
    */
   inventoryEntry(name: string, qty: number, desc: string, issn: string, orderUrl: string) {
+  
     return this.db.collection('Inventory').add({
       Name: name,
       Description: desc,
