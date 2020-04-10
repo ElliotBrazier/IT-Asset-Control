@@ -25,7 +25,7 @@
     "@angular/router": "^8.1.2",
     "@protacon/ng-virtual-keyboard": "^0.8.0",
     "angularfire2": "^5.2.1",
-    "auth0-js": "^9.11.3",
+    "auth0-js": "^9.13.2",
     "firebase": "^6.3.1",
     "igniteui-angular": "^8.1.0",
     "jquery": "^3.4.1",
